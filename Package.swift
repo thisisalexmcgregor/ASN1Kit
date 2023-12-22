@@ -26,7 +26,7 @@ let package = Package(
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
         .package(url: "http://github.com/Quick/Nimble", from: "9.2.0"),
-        .package(url: "https://github.com/krzyzanowskim/CryptoSwift.git", .upToNextMajor(from: "1.8.0")),
+        .package(url: "https://github.com/krzyzanowskim/CryptoSwift.git", .upToNextMajor(from: "1.5.1")),
         .package(url: "http://github.com/Carthage/Commandant", from: "0.17.0"),
         .package(url: "https://github.com/apple/swift-docc-plugin", from: "1.1.0")
     ],
