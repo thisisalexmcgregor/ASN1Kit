@@ -14,7 +14,7 @@
 // limitations under the License.
 //
 
-import DataKit
+import CryptoSwift
 import Foundation
 
 extension ASN1Primitive: CustomStringConvertible {
@@ -34,7 +34,7 @@ extension ASN1Data: CustomStringConvertible {
     public var description: String {
         switch self {
         case let .primitive(data):
-            return "Primitive: [\(data.hexString())]"
+            return "Primitive: [\(data.toHexString())]"
         case let .constructed(items):
             return "[\n\t" +
                 items.map { String(describing: $0).replacingOccurrences(of: "\n", with: "\n\t") }
@@ -61,15 +61,15 @@ extension ASN1Tag {
         case .generalString: fallthrough
         case .utf8String:
             return (try? String(from: create(tag: .universal(self), data: .primitive(data)))) ??
-                "Invalid string: [\(data.hexString())]"
+                "Invalid string: [\(data.toHexString())]"
         case .objectIdentifier:
             return (try? ObjectIdentifier(from: create(tag: .universal(self), data: .primitive(data))).rawValue) ??
-                "Invalid OID: [\(data.hexString())]"
+                "Invalid OID: [\(data.toHexString())]"
         case .utcTime: fallthrough
         case .generalizedTime:
             return String(describing: try? Date(from: create(tag: .universal(self), data: .primitive(data))))
         default:
-            return "[\(data.hexString())]"
+            return "[\(data.toHexString())]"
         }
     }
 }
@@ -83,7 +83,7 @@ extension ASN1DecodedTag: CustomStringConvertible {
             case .applicationTag: fallthrough
             case .taggedTag: fallthrough
             case .privateTag:
-                return "[IMPLICIT] \(primitive.hexString())"
+                return "[IMPLICIT] \(primitive.toHexString())"
             }
         }, { items in
             String(describing: items)

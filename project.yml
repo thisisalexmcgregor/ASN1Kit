@@ -24,6 +24,9 @@ packages:
   Nimble:
     url: https://github.com/Quick/Nimble/
     majorVersion: 10.0.0
+  CryptoSwift:
+    url: https://github.com/krzyzanowskim/CryptoSwift
+    majorVersion: 1.8.0
 targets:
   ASN1Kit:
     type: framework
@@ -33,7 +36,7 @@ targets:
     sources:
       - Sources/ASN1Kit
     dependencies:
-      - framework: Carthage/Build/DataKit.xcframework
+      - package: CryptoSwift
     scheme:
       testTargets:
         - ASN1KitTests_${platform}
@@ -52,7 +55,7 @@ targets:
       - target: ASN1Kit_macOS
         embed: true
       - package: Commandant
-      - framework: Carthage/Build/DataKit.xcframework
+      - package: CryptoSwift
     scheme:
      gatherCoverageData: true 
   ASN1KitTests:
@@ -68,4 +71,5 @@ targets:
     dependencies:
       - target: ASN1Kit_${platform}
       - package: Nimble
+      - package: CryptoSwift
 buildImplicitDependencies: true

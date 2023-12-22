@@ -14,7 +14,7 @@
 // limitations under the License.
 //
 
-import DataKit
+import CryptoSwift
 import Foundation
 
 /**
@@ -83,7 +83,7 @@ public class ASN1Decoder {
                 throw ASN1Error.malformedEncoding("Scanner has insufficient bytes left to decode long-length notation")
             }
             guard let length = lengthBytes.unsignedIntValue else {
-                throw ASN1Error.unsupported("Length data invalid(/too long): [0x\(lengthBytes.hexString())]")
+                throw ASN1Error.unsupported("Length data invalid(/too long): [0x\(lengthBytes.toHexString())]")
             }
             return Int(length)
         } else {

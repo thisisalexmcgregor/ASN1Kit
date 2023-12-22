@@ -14,7 +14,7 @@
 // limitations under the License.
 //
 
-import DataKit
+import CryptoSwift
 import Foundation
 
 /// Encoding formatter, Decoding formatter

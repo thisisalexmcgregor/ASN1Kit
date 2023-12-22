@@ -16,7 +16,7 @@
 
 import ASN1Kit
 import Commandant
-import DataKit
+import CryptoSwift
 import Foundation
 
 struct ParseCommand: CommandProtocol {

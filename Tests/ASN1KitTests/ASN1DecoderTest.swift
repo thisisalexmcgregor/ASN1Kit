@@ -69,7 +69,7 @@ final class ASN1DecoderTest: XCTestCase { // swiftlint:disable:this type_body_le
         let data = Data([lengthByte, 0x01, 0xB3, 0xFF, 0xE1, 0x10, 0x9, 0x8, 0x7, 0x6]) // length = too long for UInt
         let scanner = DataScanner(data: data)
         expect(try ASN1Decoder.decodeLength(from: scanner)).to(throwError(ASN1Error.unsupported(
-            "Length data invalid(/too long): [0x\(data[1 ..< data.count].hexString())]"
+            "Length data invalid(/too long): [0x\(data[1 ..< data.count].toHexString())]"
         )))
     }
 

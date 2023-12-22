@@ -11,6 +11,15 @@
         }
       },
       {
+        "package": "CryptoSwift",
+        "repositoryURL": "https://github.com/krzyzanowskim/CryptoSwift.git",
+        "state": {
+          "branch": null,
+          "revision": "db51c407d3be4a051484a141bf0bff36c43d3b1e",
+          "version": "1.8.0"
+        }
+      },
+      {
         "package": "CwlCatchException",
         "repositoryURL": "https://github.com/mattgallagher/CwlCatchException.git",
         "state": {
@@ -26,15 +35,6 @@
           "branch": null,
           "revision": "02b7a39a99c4da27abe03cab2053a9034379639f",
           "version": "2.0.0"
-        }
-      },
-      {
-        "package": "DataKit",
-        "repositoryURL": "https://github.com/SwiftCommon/DataKit.git",
-        "state": {
-          "branch": null,
-          "revision": "08cc443adbe1103ba36e1c187fa313b8e412ad60",
-          "version": "1.1.0"
         }
       },
       {
